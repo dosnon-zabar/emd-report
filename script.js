@@ -56,16 +56,14 @@
 
   tot.textContent = String(slides.length).padStart(2, '0');
 
-  // Move each slide's .num into its title as an inline prefix
-  slides.forEach(slide => {
-    const num = slide.querySelector(':scope > .num');
-    const heading = slide.querySelector('.h-title, .h-display');
+  // For .card.with-frein, inline the .card-num inside the h4
+  document.querySelectorAll('.card.with-frein').forEach(card => {
+    const num = card.querySelector('.card-num');
+    const heading = card.querySelector('h4');
     if (!num || !heading) return;
     const span = document.createElement('span');
-    span.className = 'num-inline';
+    span.className = 'card-num-inline';
     span.textContent = num.textContent;
-    num.remove();
-    heading.insertBefore(document.createTextNode(' '), heading.firstChild);
     heading.insertBefore(span, heading.firstChild);
   });
 
