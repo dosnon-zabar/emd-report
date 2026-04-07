@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EM Dash — Rapport d'audit flash · Lucius</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#s1" aria-label="Lucius">
+    <img src="assets/lucius-logo.png" alt="Lucius" />
+  </a>
+  <nav class="counter"><span id="cur">01</span><span class="sep">/</span><span id="tot">24</span></nav>
+</header>
+
+<footer class="footbar">
+  <div class="meta">
+    <span>EM Dash · Audit flash</span>
+    <span class="dot">·</span>
+    <span>Mars 2026</span>
+    <span class="dot">·</span>
+    <span>V1.0</span>
+  </div>
+</footer>
+
+<main class="deck" id="deck">
+
+  <!-- 1. Cover -->
+  <section class="slide cover" id="s1">
+    <div class="cover-grid">
+      <div class="cover-left">
+        <div class="eyebrow">Rapport d'audit flash</div>
+        <h1 class="display">EM Dash</h1>
+        <p class="lede">Que faudrait-il changer et/ou décider pour définir et tenir une date de sortie de la marketplace&nbsp;?</p>
+        <div class="cover-meta">
+          <div><span class="k">Lucius</span><span class="v">Semaine du 30 mars 2026</span></div>
+          <div><span class="k">Version</span><span class="v">1.0 — première version client</span></div>
+          <div><span class="k">Date</span><span class="v">3 avril 2026</span></div>
+        </div>
+      </div>
+      <div class="cover-right">
+        <div class="card big-card">
+          <div class="card-num">00</div>
+          <div class="card-label">Question centrale</div>
+          <div class="card-body">Notre lecture de ce qui bloque la sortie — et ce qu'on peut faire avec ce qu'on a déjà.</div>
+        </div>
+      </div>
+    </div>
+    <div class="hint">Faites défiler horizontalement →</div>
+  </section>
+
+  <!-- 2. Méthode -->
+  <section class="slide" id="s2">
+    <div class="num">01</div>
+    <div class="kicker">Méthode</div>
+    <h2 class="h-display">Cinq jours d'observation, depuis vos locaux.</h2>
+    <div class="two-col">
+      <div>
+        <p>Pas d'ateliers. Pas de livrables intermédiaires. On a regardé, écouté, posé des questions. Dailys, Slack, Linear, entretiens individuels avec chaque personne clé, démo de la marketplace, conversations informelles.</p>
+        <h4>Personnes rencontrées</h4>
+        <ul class="chips">
+          <li>Axel ×2</li><li>Brice ×2</li><li>Tony</li><li>Edouard</li><li>Bastien</li><li>Mickaël</li><li>Wala</li><li>Réunion CSM</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Ce qu'on n'a pas fait</h4>
+        <p class="muted">Audit de code, architecture technique, refonte du legacy. Ce n'est pas notre rôle et ce n'est pas ce qui répond à ta question.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Cadre -->
+  <section class="slide center" id="s3">
+    <div class="num">02</div>
+    <div class="kicker">Cadre des recommandations</div>
+    <h2 class="h-display"><em>On fait avec ce qu'on a.</em></h2>
+    <p class="big-lede">Pas d'embauche nouvelle. Pas de réorganisation radicale. Périmètre financier constant.</p>
+    <p class="big-lede">Ce n'est pas une contrainte subie — c'est un choix de réalisme. Ce qu'on propose, c'est de mieux utiliser ce qui existe déjà.</p>
+  </section>
+
+  <!-- 4. Section 1 intro -->
+  <section class="slide section-intro" id="s4">
+    <div class="big-num">1</div>
+    <h2 class="h-display">Ce qu'on observe</h2>
+    <p class="big-lede">Six lectures du terrain — du legacy au cadre de travail, en passant par la connaissance et le décalage d'exigence.</p>
+    <ol class="toc">
+      <li><span>1.1</span> Le legacy pèse — et personne ne sait combien</li>
+      <li><span>1.2</span> Pas de planning marketplace — le run noie tout</li>
+      <li><span>1.3</span> Le cadre existant n'est plus assez opérant</li>
+      <li><span>1.4</span> La connaissance ne s'accumule pas — elle se perd</li>
+      <li><span>1.5</span> La santé de FontRadar est surveillée à vue</li>
+      <li><span>1.6</span> Décalage entre l'exigence attendue et l'équipe</li>
+    </ol>
+  </section>
+
+  <!-- 5. 1.1 Legacy -->
+  <section class="slide" id="s5">
+    <div class="num">1.1</div>
+    <h2 class="h-title">Le legacy pèse — et personne ne sait exactement combien.</h2>
+    <div class="two-col">
+      <div>
+        <p>Requêtes SQL de 400-500 lignes en V1. Dispute engine non migré. Algo DNA codé par l'ancien CTO. La coexistence V1/V2 crée des bugs invisibles.</p>
+        <blockquote>« Tu vérifies les statuts V2, tout est OK. Tu regardes en base, il y a un statut V1 qui n'est pas bon. Et tu ne sais pas d'où ça vient. »<cite>— Bastien</cite></blockquote>
+        <p class="muted">Ce qu'on ne peut pas mesurer&nbsp;: quelle part des retards vient du legacy, quelle part vient de l'organisation. Les deux s'alimentent mutuellement.</p>
+      </div>
+      <div class="split">
+        <div class="card">
+          <div class="card-num">A</div>
+          <h4>Architecture</h4>
+          <p>Le dispute engine reste en V1 alors que ~80% de FontRadar est migré en V2. Refacto progressif ou repartir à zéro&nbsp;? Tant que ce n'est pas tranché, pas de date crédible.</p>
+        </div>
+        <div class="card">
+          <div class="card-num">B</div>
+          <h4>Observabilité</h4>
+          <p>Quand les disputes <em>« arrêtent de tomber »</em>, personne ne sait d'où ça vient. La plateforme devrait traiter 500 disputes/jour — elle en traite 250 à 300. Traitable plus rapidement, sans attendre la décision sur le dispute engine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 1.2 Pas de planning -->
+  <section class="slide" id="s6">
+    <div class="num">1.2</div>
+    <h2 class="h-title">Il n'existe pas de planning marketplace — et le run noie tout.</h2>
+    <div class="two-col">
+      <div>
+        <p>Pas d'estimation de charge sur les composants du MVP. Pas de séquencement. Pas de dépendances cartographiées.</p>
+        <blockquote>« Tu sais combien de temps il te faut pour finir ça&nbsp;? » — « Non, je ne sais pas. »<cite>— sur Font Helper</cite></blockquote>
+        <p>Mickaël n'a peut-être jamais eu à estimer, ni su qu'il en avait le droit et la responsabilité. Le cadre ne l'y a pas confronté.</p>
+      </div>
+      <div>
+        <div class="callout">
+          <h4>Pour l'équipe, tout est du run.</h4>
+          <p>Marketplace et FontRadar cohabitent dans le même daily, les mêmes sprints, le même flux de tickets. Les urgences opérationnelles mangent le temps disponible pour la marketplace — par absence de mécanisme de protection.</p>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2 / 17</div>
+          <div class="stat-label">composants terminés sur la roadmap de janvier — tout le reste rouge ou gris.</div>
+        </div>
+        <p class="arrow">→ Toute date de sortie annoncée est une fiction tant qu'il n'y a pas de charge estimée et de temps sanctuarisé pour la marketplace.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 1.3 Cadre -->
+  <section class="slide" id="s7">
+    <div class="num">1.3</div>
+    <h2 class="h-title">Le cadre de travail existant n'est plus assez opérant.</h2>
+    <p class="lede-row">Sprints, Linear, poker planning, daily, réunion CSM hebdo. Le cadre existe — mais à plusieurs endroits, il ne suffit plus.</p>
+    <blockquote class="wide">« On a jamais tenu nos sprints, ça a tout le temps été un gros yolo. Je ne me rappelle pas d'une fois où on a terminé un sprint. »<cite>— Axel</cite></blockquote>
+    <table class="t">
+      <thead><tr><th>Étape</th><th>Ce qui se passe</th><th>Ce qui manque</th></tr></thead>
+      <tbody>
+        <tr><td>Naissance</td><td>Décidée par Axel + Brice, de mémoire et d'intuition</td><td>Pas de cadrage stratégique amont, pas de critères de succès</td></tr>
+        <tr><td>Spécification</td><td>US écrites par Brice dans Linear</td><td>Pas de critères d'acceptance, pas de « pourquoi c'est important »</td></tr>
+        <tr><td>Dev</td><td>Le dev exécute selon sa compréhension des specs</td><td>Le contexte métier et stratégique manque souvent</td></tr>
+        <tr><td>Recette</td><td>Tests à l'œil. Brice (parfois Axel) valide en sortie</td><td>Pas de DoD, pas de QA structurée</td></tr>
+        <tr><td>Prod</td><td>Pas d'environnement de branche temporaire</td><td>« Ça marche en local » ≠ ça marchera en prod</td></tr>
+        <tr><td>Post-livraison</td><td>Remontées CSM dans #_bugs, Brice gère</td><td>Pas de post-mortem, chaque incident repart de zéro</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8. 1.4 Connaissance -->
+  <section class="slide" id="s8">
+    <div class="num">1.4</div>
+    <h2 class="h-title">La connaissance ne s'accumule pas — elle se perd.</h2>
+    <div class="two-col">
+      <div>
+        <p>Les règles métier vivent dans les têtes et dans les conversations. L'algo DNA est irreprénable. Les règles de facturation de la marketplace n'étaient pas documentées.</p>
+        <blockquote>« Je ne sais pas, j'espère. »<cite>— Axel, sur l'existence d'une doc des règles</cite></blockquote>
+      </div>
+      <div class="callout dark">
+        <h4>Le savoir tacite ne se documente pas.</h4>
+        <p>L'intuition de Brice sur d'où vient un bug, sa lecture du dispute engine — ça se transmet de personne à personne. Et cette transmission n'est pas organisée.</p>
+        <p class="strong">Chaque départ emporte quelque chose d'irremplaçable. Chaque nouveau chantier repart en partie de zéro.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 1.5 Santé FR -->
+  <section class="slide" id="s9">
+    <div class="num">1.5</div>
+    <h2 class="h-title">La santé de FontRadar n'est pas pilotée — elle est surveillée à vue.</h2>
+    <div class="two-col">
+      <div>
+        <p>Axel surveille Metabase manuellement et alerte Brice quand les courbes descendent. Ce sont les CSMs qui détectent les dégradations avant l'équipe — canaris dans la mine.</p>
+        <p>Pas de post-mortem. Chaque incident repart de zéro.</p>
+      </div>
+      <div>
+        <div class="callout">
+          <p class="strong">Si Brice est absent, l'observabilité s'effondre. Il est le monitoring de fait.</p>
+        </div>
+        <p class="muted">Une marketplace transactionnelle impose des standards d'exploitation que FontRadar n'a jamais eu à tenir. Cette rupture de philosophie n'est pas préparée.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. 1.6 Décalage -->
+  <section class="slide" id="s10">
+    <div class="num">1.6</div>
+    <h2 class="h-title">Décalage entre l'exigence attendue et le niveau de l'équipe.</h2>
+    <p class="lede-row">D'un côté, des standards très élevés portés par Axel et Brice. De l'autre, une équipe majoritairement junior, qui fait de son mieux — mais qui n'a pas encore la maturité pour anticiper les problèmes de conception ou détecter seule quand une solution dérive.</p>
+    <table class="t">
+      <thead><tr><th>Dev</th><th>Sur quoi</th><th>Comprend le « pourquoi » métier&nbsp;?</th></tr></thead>
+      <tbody>
+        <tr><td>Tony</td><td>Panier, architecture</td><td>Techniquement oui. Pas dans la roadmap ni la priorisation&nbsp;: « Je ne fais pas la roadmap. »</td></tr>
+        <tr><td>Mickaël</td><td>Font Helper (refacto)</td><td>Non — « Non, je ne sais pas » sur la charge restante et l'impact planning</td></tr>
+        <tr><td>Bastien</td><td>Licences / prix</td><td>Sur l'enjeu technique&nbsp;: oui. Sur l'enjeu stratégique (premier contact fonderie)&nbsp;: non</td></tr>
+        <tr><td>Wala</td><td>Tunnel de commande</td><td>Partiellement — elle crée ses propres specs pour compenser le manque</td></tr>
+      </tbody>
+    </table>
+    <p class="arrow">→ Ce décalage ne se règle pas en changeant d'équipe. Il se règle en créant les conditions pour que l'exigence soit traduite en critères de travail concrets, transmise <em>avant</em> que le dev commence.</p>
+  </section>
+
+  <!-- 11. Socle solide -->
+  <section class="slide" id="s11">
+    <div class="num">1b</div>
+    <h2 class="h-title">Ce qui constitue un socle solide.</h2>
+    <p class="lede-row">Ce n'est pas une section de politesse. C'est une lecture honnête des ressources sur lesquelles s'appuient les recommandations.</p>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-num">★</div>
+        <h4>Une équipe réactive et solidaire</h4>
+        <p>Quand quelqu'un demande, quelqu'un répond — souvent en quelques minutes. Mobilisation collective sur les incidents, sans qu'on le demande.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">★</div>
+        <h4>Confiance entre les gens</h4>
+        <p>D&D ensemble le week-end. La sécurité psychologique de base est là — c'est plus rare qu'on ne le croit.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">★</div>
+        <h4>Volonté réelle de bien faire</h4>
+        <p>Bastien surveille un batch jusqu'à 3h. Wala crée ses propres specs. Tony alerte en live, même hors sprint. L'envie est là.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">★</div>
+        <h4>Lucidité individuelle</h4>
+        <p>Brice : « on y va au doigt mouillé. » Axel : « flou artistique complet. » Le point de départ n'est pas de convaincre les gens qu'il y a un problème.</p>
+      </div>
+      <div class="card span-2">
+        <div class="card-num">★</div>
+        <h4>Un produit qui fonctionne et une vision crédible</h4>
+        <p>FontRadar génère de vrais revenus. ~90% des fonderies latines signées. La marketplace est une extension naturelle attendue. La démo du 01/04 montre que le tunnel d'achat existe et fonctionne. Il reste du chemin — mais ce n'est pas parti de zéro.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Section 2 intro -->
+  <section class="slide section-intro" id="s12">
+    <div class="big-num">2</div>
+    <h2 class="h-display">Notre diagnostic</h2>
+    <p class="big-lede">Cinq lectures qui relient les observations entre elles — et désignent ce qu'il faut traiter en priorité.</p>
+    <ol class="toc">
+      <li><span>2.1</span> Le legacy et l'organisation se nourrissent mutuellement</li>
+      <li><span>2.2</span> Un problème de maîtrise — à plusieurs niveaux</li>
+      <li><span>2.3</span> Le cadre existant doit évoluer à certains endroits</li>
+      <li><span>2.4</span> Les standards d'Axel ne sont jamais devenus collectifs</li>
+      <li><span>2.5</span> Le risque à moyen terme est plus grave que le retard</li>
+    </ol>
+  </section>
+
+  <!-- 13. 2.1 + 2.2 -->
+  <section class="slide" id="s13">
+    <div class="num">2.1 — 2.2</div>
+    <h2 class="h-title">Legacy et organisation se nourrissent. Le vrai sujet : la maîtrise.</h2>
+    <div class="two-col">
+      <div>
+        <h4>2.1 — Boucle</h4>
+        <p>Le legacy est réel. Mais l'organisation actuelle amplifie chaque problème technique&nbsp;: les inconnues restent invisibles, les constats ne deviennent pas des décisions, les urgences mangent les priorités.</p>
+        <blockquote>Si FontRadar était parfaitement stable demain matin, la marketplace sortirait-elle pour autant&nbsp;? La semaine suggère que non.</blockquote>
+      </div>
+      <div>
+        <h4>2.2 — Perte de maîtrise</h4>
+        <p>Ce qui frappe le plus, ce n'est pas les retards. C'est la perte de maîtrise à plusieurs niveaux simultanément.</p>
+        <ul class="bullets">
+          <li><strong>Technique</strong> — code non reprenable, bugs sans origine, incidents qui repartent de zéro</li>
+          <li><strong>Organisationnelle</strong> — pas de planning, pas d'engagement, pas de moment où on reprend la main</li>
+          <li><strong>Qualité</strong> — pas de DoD, Brice et Axel en dernier recours sur tout ce qui sort</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. 2.3 + 2.4 -->
+  <section class="slide" id="s14">
+    <div class="num">2.3 — 2.4</div>
+    <h2 class="h-title">Un cadre à faire évoluer. Des standards à rendre collectifs.</h2>
+    <div class="two-col">
+      <div>
+        <h4>2.3 — Évoluer, pas tout casser</h4>
+        <p>Le cadre tient sur certains points. Mais certaines pièces ne sont plus adaptées&nbsp;: une équipe plus junior, un projet plus complexe, une marketplace qui impose des standards que FontRadar n'a pas eu à tenir.</p>
+        <p class="strong">L'objectif n'est pas le contrôle — c'est de créer les conditions pour que les devs sachent ce qu'ils ont le droit de faire, ce qu'on attend d'eux, et qu'ils puissent prendre des responsabilités.</p>
+      </div>
+      <div>
+        <h4>2.4 — Standards qui n'appartiennent qu'à Axel</h4>
+        <p>Axel a des standards élevés. Mais ils lui appartiennent. Ils ne sont jamais devenus collectifs, parce qu'aucun mécanisme ne les rend visibles, partagés et exigibles avant que le dev commence.</p>
+        <div class="callout small">
+          <p>Axel et Brice compensent structurellement ce que l'organisation ne produit pas. Leur bande passante est le facteur limitant réel — pas la capacité des devs. Et cette compensation empêche les autres de monter en responsabilité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. 2.5 -->
+  <section class="slide center" id="s15">
+    <div class="num">2.5</div>
+    <h2 class="h-display">Le risque à moyen terme est plus grave que le retard à court terme.</h2>
+    <p class="big-lede">Ils sont en train de construire FontsNinja avec les mêmes patterns que le legacy FontRadar. La connaissance se perd, la dette se reconstruit, les décisions d'architecture se prennent dans des threads Slack non documentés.</p>
+    <blockquote class="hero">« Le pire qui puisse vous arriver aujourd'hui, c'est de réussir. Dans l'état dans lequel vous êtes, si vous mettez cette marketplace dans les pattes des clients, la vie d'Axel serait 100 fois pire&nbsp;: beaucoup plus de clients mécontents, une équipe qui n'a pas eu le temps de cranker sur la responsabilité et l'ownership. »<cite>— Manu, en restitution</cite></blockquote>
+    <p class="arrow">→ Sans changement structurel, dans deux ans&nbsp;: une marketplace qu'on ne peut pas opérer, maintenir, ni faire évoluer sereinement.</p>
+  </section>
+
+  <!-- 16. Section 3 intro -->
+  <section class="slide section-intro" id="s16">
+    <div class="big-num">3</div>
+    <h2 class="h-display">Ce qu'on recommande</h2>
+    <p class="big-lede">Trois niveaux. Le premier est immédiat. Le deuxième requiert des décisions d'Axel. Le troisième est la proposition de suite si on continue ensemble.</p>
+    <div class="levels">
+      <div class="level"><div class="lvl">N1</div><div class="lvl-desc">Cette semaine — sans décision lourde</div></div>
+      <div class="level"><div class="lvl">N2</div><div class="lvl-desc">Dans les 2 semaines — décisions à prendre</div></div>
+      <div class="level"><div class="lvl">N3</div><div class="lvl-desc">Si on continue — accompagnement</div></div>
+    </div>
+  </section>
+
+  <!-- 17. Niveau 1 -->
+  <section class="slide" id="s17">
+    <div class="num">N1</div>
+    <div class="kicker">Cette semaine · sans décision lourde</div>
+    <h2 class="h-title">Montrer qu'on fait différemment et commencer à faire bouger le cadre.</h2>
+    <div class="grid-5">
+      <div class="card">
+        <div class="card-num">1</div>
+        <h4>Séparer le daily plateforme du daily run</h4>
+        <p>Pour que ceux qui sont sur la marketplace restent orientés sur leurs objectifs sans être distraits par les urgences opérationnelles.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">2</div>
+        <h4>Sprint goal obligatoire</h4>
+        <p>Une phrase. Un résultat. Un engagement. Pas une liste de tickets. Crée le moment de review&nbsp;: « on s'était engagé à ça, voilà ce qu'on a tenu. »</p>
+      </div>
+      <div class="card">
+        <div class="card-num">3</div>
+        <h4>Critères d'acceptance sur chaque US</h4>
+        <p>Deux ou trois lignes&nbsp;: « c'est réussi si… ». L'endroit où le « pourquoi métier » s'inscrit dans le travail concret — pas révélé après coup.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">4</div>
+        <h4>Triage des remontées CSM</h4>
+        <p>Doter Edouard d'une grille simple pour qualifier avant remontée à Brice. Une heure de travail, libère immédiatement de la bande passante.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">5</div>
+        <h4>Monitoring de base FontRadar</h4>
+        <p>3-4 métriques surveillées automatiquement. Ne plus dépendre de la lecture manuelle de Brice ou Axel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18. Niveau 2 - rôles -->
+  <section class="slide" id="s18">
+    <div class="num">N2 · A</div>
+    <div class="kicker">Dans les 2 semaines · décision la plus structurante</div>
+    <h2 class="h-title">Clarifier qui est garant de quoi.</h2>
+    <p class="lede-row">Même équipe, même budget — mais des rôles mieux définis. Aujourd'hui, Axel et Brice compensent tout. Ce n'est pas tenable, et ça ne laisse pas de place pour que les autres montent en responsabilité.</p>
+    <table class="t roles">
+      <thead><tr><th>Rôle</th><th>Garant de</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Axel</strong></td><td>Le produit et son ambition — la vision, le positionnement, la promesse faite aux fonderies</td></tr>
+        <tr><td><strong>Brice</strong></td><td>Le fonctionnel — que ce qui est spécifié corresponde au besoin, que ce qui sort fonctionne</td></tr>
+        <tr><td><strong>Tony</strong></td><td>La qualité technique — pas CTO, pas manager&nbsp;: garant de la reprise progressive de la maîtrise technique</td></tr>
+        <tr><td><strong>Le cadre</strong></td><td>La capacité à délivrer — planning, estimation, suivi des engagements</td></tr>
+      </tbody>
+    </table>
+    <div class="callout small">
+      <p>Sur le garant du cadre&nbsp;: Axel reconnaît ne pas pouvoir l'être lui-même. Brice non plus. <em>« On a probablement un trou de compétences là-dedans. Je m'inclue dedans »</em> (Axel). C'est la question ouverte — et peut-être l'argument pour un accompagnement externe.</p>
+    </div>
+  </section>
+
+  <!-- 19. Niveau 2 - actions -->
+  <section class="slide" id="s19">
+    <div class="num">N2 · B</div>
+    <div class="kicker">Dans les 2 semaines · actions à acter</div>
+    <h2 class="h-title">Cinq décisions qui débloquent tout le reste.</h2>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-num">1</div>
+        <h4>Test des estimations en heures — 2 mois</h4>
+        <p>Acté en restitution. <em>« On teste pendant deux mois et si c'est nul, on revient en arrière. »</em> Un ticket = max une journée.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">2</div>
+        <h4>Suivi simplifié run / legacy</h4>
+        <p>0,5 j / 1 j / 2 j sur chaque ticket de run. Objectiver combien le run et le legacy mobilisent réellement l'équipe.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">3</div>
+        <h4>Estimation de charge composant par composant</h4>
+        <p>Prérequis absolu à tout planning crédible. Deux fois deux heures, comme Axel le décrit. La décision qui débloque tout le reste.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">4</div>
+        <h4>Décision legacy — architecture</h4>
+        <p>Refacto progressif ou repartir à zéro&nbsp;? Sur le dispute engine. Décision stratégique, peut nécessiter un avis technique externe.</p>
+      </div>
+      <div class="card span-2">
+        <div class="card-num">5</div>
+        <h4>Décision legacy — observabilité</h4>
+        <p>Problème distinct et plus rapidement traitable. 3 à 4 métriques surveillées automatiquement, alertes sur les seuils critiques. Sort l'équipe du mode <em>« on découvre quand les dommages sont faits. »</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 20. Niveau 3 -->
+  <section class="slide" id="s20">
+    <div class="num">N3</div>
+    <div class="kicker">Si on continue · accompagnement</div>
+    <h2 class="h-title">Piloter le cadre et reprendre la maîtrise progressivement.</h2>
+    <div class="grid-5">
+      <div class="card"><div class="card-num">a</div><h4>Construire le planning marketplace</h4><p>Depuis les estimations N2 — séquencement, dépendances, ressources allouées.</p></div>
+      <div class="card"><div class="card-num">b</div><h4>Mécanisme de réaction à la dérive</h4><p>Un seuil ou un rituel qui force le « stop, on recalibre » avant que ce soit fatal.</p></div>
+      <div class="card"><div class="card-num">c</div><h4>Process de discovery minimal</h4><p>Stratégique → métier → technique. Inverser cet ordre change ce qui entre dans les specs.</p></div>
+      <div class="card"><div class="card-num">d</div><h4>RETEX structuré sur les incidents</h4><p>Nommer, déculpabiliser, rendre l'équipe collectivement responsable de la non-récurrence.</p></div>
+      <div class="card"><div class="card-num">e</div><h4>Mécanisme d'appel à l'aide pour les devs</h4><p>Quand tu es bloqué, tu appelles, quelqu'un vient. Le manager est en échec si personne ne l'appelle.</p></div>
+      <div class="card"><div class="card-num">f</div><h4>Démos comme rituel central</h4><p>Toutes les deux semaines. Le travail réel devient visible, le savoir tacite se transmet.</p></div>
+      <div class="card"><div class="card-num">g</div><h4>« Qui apprend quoi »</h4><p>En complément de « qui fait quoi ». Sans dimension d'apprentissage, la répartition reste un organigramme.</p></div>
+      <div class="card"><div class="card-num">h</div><h4>Voix des CSMs dans le produit</h4><p>Pas seulement un filtre de remontées — une vraie place dans la définition produit marketplace.</p></div>
+      <div class="card"><div class="card-num">i</div><h4>Complémentarité des profils</h4><p>Plutôt qu'alignement sur un standard. La performance se mesure en équipe.</p></div>
+    </div>
+  </section>
+
+  <!-- 21. Section 4 -->
+  <section class="slide" id="s21">
+    <div class="num">04</div>
+    <div class="kicker">Garde-fous</div>
+    <h2 class="h-title">Ce qu'on ne recommande pas — et pourquoi.</h2>
+    <div class="grid-4">
+      <div class="card no">
+        <div class="x">✕</div>
+        <h4>Embaucher un CTO ou un profil senior externe</h4>
+        <p>Hors périmètre financier — et Tony peut progressivement remplir ce rôle si on lui en donne les conditions.</p>
+      </div>
+      <div class="card no">
+        <div class="x">✕</div>
+        <h4>Refonte technique du legacy</h4>
+        <p>Pas notre compétence. Et le legacy seul n'explique pas les retards.</p>
+      </div>
+      <div class="card no">
+        <div class="x">✕</div>
+        <h4>Réorganisation radicale</h4>
+        <p>L'équipe est stable, elle s'apprécie, elle veut bien faire. Ce n'est pas ce qu'il faut changer.</p>
+      </div>
+      <div class="card no">
+        <div class="x">✕</div>
+        <h4>Tout changer en même temps</h4>
+        <p>Mieux vaut 3 choses qui tiennent que 15 qui glissent. Axel a lui-même identifié le risque.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 22. Section 5 - acté -->
+  <section class="slide" id="s22">
+    <div class="num">05 · A</div>
+    <div class="kicker">Proposition de suite</div>
+    <h2 class="h-title">Ce qu'Axel a acté en restitution.</h2>
+    <div class="grid-4">
+      <div class="card ok"><div class="check">✓</div><h4>Estimations en heures</h4><p>Test sur 2 mois.</p></div>
+      <div class="card ok"><div class="check">✓</div><h4>Suivi simplifié run / legacy</h4><p>0,5 j / 1 j / 2 j.</p></div>
+      <div class="card ok"><div class="check">✓</div><h4>Sprint goal + DoD</h4><p>Critères d'acceptance et d'expérience utilisateur.</p></div>
+      <div class="card ok"><div class="check">✓</div><h4>Répartition Axel / Brice / Tony</h4><p>À formaliser, avec Brice dans la pièce.</p></div>
+    </div>
+    <div class="callout">
+      <h4>Ce qui reste ouvert</h4>
+      <p>Qui est garant de la capacité à délivrer&nbsp;? C'est le 4ᵉ rôle — celui qui garantit que le planning tient, que les estimations sont challengées, que l'écart est nommé avant d'être fatal. <em>« Ça sert aussi un peu de fusible »</em> (Axel).</p>
+    </div>
+  </section>
+
+  <!-- 23. Section 5 - phase 2 -->
+  <section class="slide" id="s23">
+    <div class="num">05 · B</div>
+    <div class="kicker">Ce que Lucius peut faire en phase 2</div>
+    <h2 class="h-title">Garant externe de la capacité à délivrer — pour une période délimitée.</h2>
+    <div class="two-col">
+      <div>
+        <h4>Ce qu'on ferait</h4>
+        <ul class="bullets">
+          <li>Tenir le planning marketplace avec Brice — estimation, séquencement, mécanisme de réaction à la dérive</li>
+          <li>Activer le mandat Tony — créer les conditions pour qu'il soit effectif</li>
+          <li>Installer les rituels qui permettent à l'équipe de monter en responsabilité — RETEX, démos, appel à l'aide</li>
+          <li>Sortir Axel et Brice de la boucle d'exécution — par délégation réelle, pas par proclamation</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ce qu'on ne ferait pas</h4>
+        <ul class="bullets nope">
+          <li>Audit de code</li>
+          <li>Architecture technique</li>
+          <li>Refonte du legacy</li>
+          <li>Management direct des devs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 24. Closing -->
+  <section class="slide closing center" id="s24">
+    <div class="kicker">En une phrase</div>
+    <h2 class="display closing-line">Ton équipe est bonne — et elle mérite un cadre à la hauteur de ce qu'elle peut donner.</h2>
+    <div class="signature">
+      <img src="assets/lucius-logo.png" alt="Lucius" />
+      <div>
+        <div>Lucius · Audit flash EM Dash</div>
+        <div class="muted">Avril 2026 · V1.0</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="prevnext" aria-label="Navigation">
+  <button id="prev" aria-label="Précédent">←</button>
+  <button id="next" aria-label="Suivant">→</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
