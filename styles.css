@@ -404,8 +404,8 @@ blockquote.hero{max-width:70ch;font-size:22px;border-left-width:6px;padding-left
 }
 .bullets{list-style:none;padding:0;margin:8px 0}
 .bullets li{position:relative;padding-left:22px;margin-bottom:10px;font-size:15px;line-height:1.5;color:var(--dark-grey)}
-.bullets li:before{content:"";position:absolute;left:0;top:10px;width:10px;height:2px;background:var(--accent)}
-.bullets.nope li:before{background:#c44}
+.bullets li:before{content:"•";position:absolute;left:2px;top:0;font-size:20px;line-height:1.5;color:var(--accent);font-weight:700}
+.bullets.nope li:before{content:"•";color:#c44}
 .bullets.check li,.bullets.cross li{padding-left:32px}
 .bullets.check li:before,.bullets.cross li:before{display:none}
 .bullets .ic{position:absolute;left:0;top:0;font-size:16px;line-height:1.5;width:24px}
