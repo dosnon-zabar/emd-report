@@ -29,17 +29,17 @@
 </div>
 
 <header class="topbar">
-  <a class="brand" href="#s1" data-target="s1" aria-label="Lucius">
+  <a class="brand" href="#cover" data-target="cover" aria-label="Lucius">
     <img src="assets/lucius-logo.png" alt="Lucius" />
   </a>
   <nav class="mainnav">
-    <a href="#s1" data-target="s1">Accueil</a>
-    <a href="#s4" data-target="s4">Ce qu'on observe</a>
-    <a href="#s12" data-target="s12">Notre diagnostic</a>
-    <a href="#s16" data-target="s16">Ce qu'on recommande</a>
-    <a href="#s22" data-target="s22">Proposition de suite</a>
+    <a href="#cover" data-target="cover">Accueil</a>
+    <a href="#observe" data-target="observe">Ce qu'on observe</a>
+    <a href="#diagnostic" data-target="diagnostic">Notre diagnostic</a>
+    <a href="#recommande" data-target="recommande">Ce qu'on recommande</a>
+    <a href="#suite" data-target="suite">Proposition de suite</a>
   </nav>
-  <nav class="counter"><span id="cur">01</span><span class="sep">/</span><span id="tot">27</span></nav>
+  <nav class="counter"><span id="cur">01</span><span class="sep">/</span><span id="tot">31</span></nav>
 </header>
 
 <footer class="footbar">
@@ -55,15 +55,15 @@
 <main class="deck" id="deck">
 
   <!-- 1. Cover -->
-  <section class="slide cover" id="s1">
+  <section class="slide cover" id="cover">
     <div class="cover-grid">
       <div class="cover-left">
         <div class="eyebrow">Rapport d'audit flash</div>
         <h1 class="display">EM Dash</h1>
         <div class="cover-meta">
-          <div><span class="k">Lucius</span><span class="v">Semaine du 30 mars 2026</span></div>
-          <div><span class="k">Version</span><span class="v">1.0</span></div>
-          <div><span class="k">Date</span><span class="v">3 avril 2026</span></div>
+          <div><span class="k">Mission</span><span class="v">Observation et entretiens du 30 mars au 7 avril 2026</span></div>
+          <div><span class="k">Version du rapport</span><span class="v">1.1</span></div>
+          <div><span class="k">Date du rapport</span><span class="v">8 avril 2026</span></div>
         </div>
       </div>
       <div class="cover-right">
@@ -79,9 +79,9 @@
   </section>
 
   <!-- 2. Méthode -->
-  <section class="slide" id="s2">
+  <section class="slide" id="methode">
         <div class="kicker">Méthode</div>
-    <h2 class="h-display"><span class="num-inline">01</span> Ce qu'on a fait cette semaine.</h2>
+    <h2 class="h-display"><span class="num-inline">01</span> Ce qu'on a fait<br />cette semaine.</h2>
     <p class="lede-row">Cinq jours d'observation dans vos locaux. Pas d'ateliers, pas de livrables intermédiaires&nbsp;: on a regardé, écouté, posé des questions. Dailys, Slack, Linear, entretiens individuels avec chaque personne clé, regard porté sur les outils et l'avancée de la marketplace, conversations informelles.</p>
     <div class="two-col">
       <div>
@@ -91,7 +91,7 @@
         </ul>
         <h4 class="mt">Rituels observés</h4>
         <ul class="chips">
-          <li>Dailys</li><li>Point hebdo CSM</li><li>Discussion informelle sur une fonctionnalité</li>
+          <li>Dailys</li><li>Point hebdo CSM</li><li>Discussion informelle sur une fonctionnalité</li><li>Monthly / Quarterly</li>
         </ul>
       </div>
       <div class="card">
@@ -102,31 +102,33 @@
   </section>
 
   <!-- 3. Cadre -->
-  <section class="slide center" id="s3">
+  <section class="slide center" id="cadre">
         <div class="kicker">Cadre de nos recommandations</div>
     <p class="big-lede">Tout ce qui suit part d'un principe&nbsp;:</p>
-    <h2 class="h-display"><span class="num-inline">02</span> <em>On fait avec ce qu'on a.</em></h2>
+    <h2 class="h-display wide"><span class="num-inline">02</span> <em>On fait avec ce qu'on a.</em></h2>
     <p class="big-lede">Pas d'embauche nouvelle, pas de réorganisation radicale, périmètre financier constant.</p>
     <p class="big-lede">Ce n'est pas une contrainte subie - c'est un choix de réalisme. Ce qu'on propose, c'est de mieux utiliser ce qui existe déjà.</p>
   </section>
 
   <!-- 4. Section 1 intro -->
-  <section class="slide section-intro" id="s4">
+  <section class="slide section-intro" id="observe">
     <div class="big-num">1</div>
     <h2 class="h-display">Ce qu'on observe</h2>
-    <p class="big-lede">Six lectures du terrain - du legacy au cadre de travail, en passant par la connaissance et le décalage d'exigence.</p>
+    <p class="big-lede">Huit lectures du terrain - du legacy au cadre de travail, en passant par la connaissance et le décalage d'exigence.</p>
     <ol class="toc">
-      <li><span>1.1</span> Le legacy pèse - et personne ne sait combien</li>
-      <li><span>1.2</span> Pas de planning marketplace - le run noie tout</li>
-      <li><span>1.3</span> Le cadre existant n'est plus assez opérant</li>
-      <li><span>1.4</span> La connaissance ne s'accumule pas - elle se perd</li>
-      <li><span>1.5</span> La santé de FontRadar est surveillée à vue</li>
-      <li><span>1.6</span> Décalage entre l'exigence attendue et l'équipe</li>
+      <li><a href="#1-1" data-target="1-1"><span>1.1</span> Le legacy pèse - et personne ne sait combien</a></li>
+      <li><a href="#1-2" data-target="1-2"><span>1.2</span> Pas de planning marketplace - le run noie tout</a></li>
+      <li><a href="#1-3" data-target="1-3"><span>1.3</span> Le cadre existant n'est plus assez opérant</a></li>
+      <li><a href="#1-4" data-target="1-4"><span>1.4</span> La connaissance ne s'accumule pas - elle se perd</a></li>
+      <li><a href="#1-5" data-target="1-5"><span>1.5</span> La santé de FontRadar est surveillée à vue</a></li>
+      <li><a href="#1-6" data-target="1-6"><span>1.6</span> Décalage entre l'exigence attendue et l'équipe</a></li>
+      <li><a href="#1-7" data-target="1-7"><span>1.7</span> Un problème de leadership</a></li>
+      <li><a href="#1-8" data-target="1-8"><span>1.8</span> Le travail réel de l'équipe n'est pas reconnu</a></li>
     </ol>
   </section>
 
   <!-- 5. 1.1 Legacy -->
-  <section class="slide" id="s5">
+  <section class="slide" id="1-1">
         <h2 class="h-title"><span class="num-inline">1.1</span> Le legacy pèse - et personne ne sait exactement combien.</h2>
     <div class="two-col">
       <div>
@@ -151,7 +153,7 @@
   </section>
 
   <!-- 6. 1.2 Pas de planning -->
-  <section class="slide" id="s6">
+  <section class="slide" id="1-2">
         <h2 class="h-title"><span class="num-inline">1.2</span> Il n'existe pas de planning marketplace - et le run noie tout.</h2>
     <div class="two-col">
       <div>
@@ -177,7 +179,7 @@
   </section>
 
   <!-- 7. 1.3 Cadre -->
-  <section class="slide" id="s7">
+  <section class="slide" id="1-3">
         <h2 class="h-title"><span class="num-inline">1.3</span> Le cadre de travail existant n'est plus assez opérant.</h2>
     <p class="lede-row">Un cadre existe - sprints, Linear, poker planning, daily, réunion CSM hebdo. Il a été construit et il tient sur certains points. Mais il ne suffit plus, ou plus tout à fait.</p>
     <blockquote class="wide">« On a jamais tenu nos sprints, ça a tout le temps été un gros yolo. Je ne me rappelle pas d'une fois où on a terminé un sprint. »<cite>- Axel</cite></blockquote>
@@ -196,7 +198,7 @@
   </section>
 
   <!-- 8. 1.4 Connaissance -->
-  <section class="slide" id="s8">
+  <section class="slide" id="1-4">
         <h2 class="h-title"><span class="num-inline">1.4</span> La connaissance ne s'accumule pas - elle se perd.</h2>
     <div class="two-col">
       <div>
@@ -218,7 +220,7 @@
   </section>
 
   <!-- 9. 1.5 Santé FR -->
-  <section class="slide" id="s9">
+  <section class="slide" id="1-5">
         <h2 class="h-title"><span class="num-inline">1.5</span> La santé de FontRadar n'est pas pilotée - elle est surveillée à vue.</h2>
     <div class="two-col">
       <div>
@@ -237,7 +239,7 @@
   </section>
 
   <!-- 10. 1.6 Décalage -->
-  <section class="slide" id="s10">
+  <section class="slide" id="1-6">
         <h2 class="h-title"><span class="num-inline">1.6</span> Décalage entre l'exigence attendue et le niveau de l'équipe.</h2>
     <p class="lede-row">Axel a des standards très élevés. Il le montre en live - 20 à 30 secondes pour enregistrer un prix de base sur le Catalogue. Il prototypait le NLP en deux jours là où l'équipe passait trois mois.</p>
     <blockquote>« À tous les niveaux, il y a des problématiques de conception. »<cite>- Axel</cite></blockquote>
@@ -259,8 +261,44 @@
     <p class="arrow">→ Ce décalage ne se règle pas en changeant d'équipe. Il se règle en créant les conditions pour que l'exigence soit traduite en critères de travail concrets, transmise <em>avant</em> que le dev commence - pas révélée en live quand le résultat est livré.</p>
   </section>
 
+  <!-- 1.7 Leadership -->
+  <section class="slide" id="1-7">
+    <h2 class="h-title wide"><span class="num-inline">1.7</span> Un problème de leadership.</h2>
+    <p class="lede-row">Le monthly/quarterly du 7 avril en est le point de cristallisation. Axel présente le bilan Q1 à toute l'équipe. La roadmap est rouge, les trois objectifs marketplace ne sont pas tenus. Il dit lui-même : <em>« Q1, échec. »</em> Puis il passe à la slide suivante - pas de diagnostic, pas de décision, des objectifs Q2 quasi-identiques. Il qualifiera la réunion de <em>« grand moment de mollesse générale »</em>.</p>
+    <div class="two-col">
+      <div>
+        <p>Ce n'est pas une exception. Toute la semaine, nous avons pu constater le même pattern. La roadmap de janvier montrée et rangée sans suite. Les estimations en temps voulues par Axel, bloquées par Brice et les anciens.</p>
+        <blockquote>« Moi je leur ai dit, ok, vous gérez. Bon, sauf que ça ne fonctionne pas. »<cite>- Axel</cite></blockquote>
+        <p class="strong">La lucidité est réelle. Elle ne se transforme pas en acte.</p>
+      </div>
+      <div>
+        <div class="callout dark">
+          <p>L'équipe ne ressent pas que ça presse vraiment. Sans conséquence visible pour les retards, sans engagement clair sur le quand, la mécanique collective ne se met pas en route.</p>
+          <p class="strong">Un leader ne se définit pas par sa seule vision - il se définit par sa capacité à créer les conditions et le cadre pour que les autres agissent. Cette capacité-là fait défaut.</p>
+        </div>
+        <blockquote>« Factuellement, il y a forcément des trucs à minima que je ne fais pas bien. Ça ne doit pas être que la faute des autres. »<cite>- Axel</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1.8 Travail réel pas reconnu -->
+  <section class="slide" id="1-8">
+    <h2 class="h-title wide"><span class="num-inline">1.8</span> Le travail réel de l'équipe n'est pas reconnu.</h2>
+    <p class="lede-row">Dans ce même monthly, le travail du trimestre est présenté - refonte Fonts Removed, tunnel d'achat, NLP, corrections de bugs. C'est Axel et Brice qui en parlent, comme contenu de slides. <strong>Pas ceux qui l'ont fait.</strong></p>
+    <div class="two-col">
+      <div>
+        <p>Bastien, qui a surveillé des batchs jusqu'à 3h du matin. Tony et Wala, qui ont travaillé et presque abouti le tunnel d'achat. Ces personnes n'ont pas un mot à dire dans cette réunion. Le résultat de leur travail n'est pas montré, donc pas rendu visible aux autres.</p>
+        <p>Ce n'est pas anodin. Quand le travail réel est invisible - quand ce qui se voit c'est uniquement la roadmap qui n'avance pas, pas ce qui a été fait malgré tout - l'équipe n'a aucun levier pour se sentir responsable de ce qu'elle construit.</p>
+      </div>
+      <div class="callout">
+        <p class="strong">Le silence dans cette réunion n'est pas de la passivité. C'est le produit du cadre&nbsp;: si personne ne te demande de parler, si tu n'as rien à présenter, tu te tais.</p>
+      </div>
+    </div>
+    <p class="arrow">→ C'est le symétrique exact du constat 1.6&nbsp;: l'exigence d'Axel ne descend pas vers les devs, et le travail des devs ne remonte pas vers Axel. Le circuit est coupé dans les deux sens.</p>
+  </section>
+
   <!-- 11. Socle solide -->
-  <section class="slide" id="s11">
+  <section class="slide" id="socle">
         <div class="kicker">Mais aussi&nbsp;!</div>
     <h2 class="h-title"><span class="num-inline">1b</span> Ce qui constitue un socle solide.</h2>
     <p class="lede-row">Ce n'est pas une section de politesse. C'est une lecture honnête des ressources sur lesquelles s'appuient les recommandations.</p>
@@ -294,132 +332,167 @@
   </section>
 
   <!-- 12. Section 2 intro -->
-  <section class="slide section-intro" id="s12">
+  <section class="slide section-intro" id="diagnostic">
     <div class="big-num">2</div>
     <h2 class="h-display">Notre diagnostic</h2>
     <p class="big-lede">Cinq lectures qui relient les observations entre elles - et désignent ce qu'il faut traiter en priorité.</p>
     <ol class="toc">
-      <li><span>2.1</span> Le legacy et l'organisation se nourrissent mutuellement</li>
-      <li><span>2.2</span> Un problème de maîtrise - à plusieurs niveaux</li>
-      <li><span>2.3</span> Le cadre existant doit évoluer à certains endroits</li>
-      <li><span>2.4</span> Les standards d'Axel ne sont jamais devenus collectifs</li>
-      <li><span>2.5</span> Le risque à moyen terme est plus grave que le retard</li>
+      <li><a href="#2-1" data-target="2-1"><span>2.1</span> Le legacy et l'organisation se nourrissent mutuellement</a></li>
+      <li><a href="#2-2" data-target="2-2"><span>2.2</span> Un problème de maîtrise - à plusieurs niveaux</a></li>
+      <li><a href="#2-3" data-target="2-3"><span>2.3</span> Le cadre existant doit évoluer à certains endroits</a></li>
+      <li><a href="#2-4" data-target="2-4"><span>2.4</span> Les standards d'Axel ne sont jamais devenus collectifs</a></li>
+      <li><a href="#2-5" data-target="2-5"><span>2.5</span> Le cadre actuel protège l'équipe - mais l'empêche de grandir</a></li>
+      <li><a href="#2-6" data-target="2-6"><span>2.6</span> Le risque à moyen terme est plus grave que le retard</a></li>
     </ol>
   </section>
 
-  <!-- 13. 2.1 + 2.2 -->
-  <section class="slide" id="s13">
-        <h2 class="h-title"><span class="num-inline">2.1 - 2.2</span> Legacy et organisation se nourrissent. Le vrai sujet : la maîtrise.</h2>
-    <div class="two-col">
-      <div>
-        <h4>2.1 - Une désorganisation globale</h4>
-        <p>Le legacy est réel. Mais l'organisation actuelle amplifie chaque problème technique&nbsp;: les inconnues restent invisibles, les constats ne deviennent pas des décisions, les urgences mangent le temps des priorités.</p>
-        <p class="strong">L'un ne suffit pas à expliquer l'autre - les deux se nourrissent pour créer une désorganisation globale.</p>
-        <blockquote>Si FontRadar était parfaitement stable demain matin, la marketplace sortirait-elle pour autant&nbsp;? La semaine suggère que non.</blockquote>
-      </div>
-      <div>
-        <h4>2.2 - Perte de maîtrise à plusieurs niveaux</h4>
-        <p>Ce qui frappe le plus, ce n'est pas les retards. C'est la perte de maîtrise à plusieurs niveaux simultanément.</p>
-        <ul class="bullets">
-          <li><strong>Technique</strong> - du code qui ne peut pas être repris, des bugs dont on ne connaît pas l'origine, des incidents qui repartent de zéro à chaque fois</li>
-          <li><strong>Organisationnelle</strong> - pas de planning, pas d'engagement sur un résultat, pas de moment où on reprend la main sur la dérive</li>
-          <li><strong>Qualité</strong> - pas de critères d'acceptance, Brice et Axel en bout de course sur tout ce qui sort</li>
-        </ul>
-        <p class="muted">Plusieurs facteurs alimentent cette perte&nbsp;: l'historique des départs, la dette technique, la dispersion d'Axel et Brice, la juniorité de l'équipe, et probablement une forme de lassitude. On ne la règle pas d'un coup. Mais on peut commencer à la reprendre, avec les personnes qu'on a.</p>
-      </div>
-    </div>
+  <!-- 13. 2.1 -->
+  <section class="slide center" id="2-1">
+    <h2 class="h-title wide"><span class="num-inline">2.1</span> Le legacy et l'organisation se nourrissent mutuellement.</h2>
+    <p class="big-lede">Le legacy est réel. Mais l'organisation actuelle amplifie chaque problème technique&nbsp;: les inconnues restent invisibles, les constats ne deviennent pas des décisions, les urgences mangent le temps des priorités.</p>
+    <p class="big-lede"><strong>L'un ne suffit pas à expliquer l'autre - les deux se nourrissent pour créer une désorganisation globale.</strong></p>
+    <blockquote class="hero">Si FontRadar était parfaitement stable demain matin, la marketplace sortirait-elle pour autant&nbsp;? La semaine suggère que non.</blockquote>
   </section>
 
-  <!-- 14. 2.3 + 2.4 -->
-  <section class="slide" id="s14">
-        <h2 class="h-title"><span class="num-inline">2.3 - 2.4</span> Le cadre ne sert pas à contrôler - il sert à autoriser.</h2>
+  <!-- 13b. 2.2 -->
+  <section class="slide center" id="2-2">
+    <h2 class="h-title wide"><span class="num-inline">2.2</span> Il y a un problème de maîtrise - à plusieurs niveaux.</h2>
+    <p class="lede-row">Ce qui frappe le plus, ce n'est pas les retards. C'est la <strong>perte de maîtrise</strong> à plusieurs niveaux simultanément.</p>
+    <ul class="bullets">
+      <li><strong>Technique</strong> - du code qui ne peut pas être repris, des bugs dont on ne connaît pas l'origine, des incidents qui repartent de zéro à chaque fois</li>
+      <li><strong>Organisationnelle</strong> - pas de planning, pas d'engagement sur un résultat, pas de moment où on reprend la main sur la dérive</li>
+      <li><strong>Qualité</strong> - pas de critères d'acceptance, Brice et Axel en bout de course sur tout ce qui sort</li>
+    </ul>
+    <p class="muted">Plusieurs facteurs alimentent cette perte&nbsp;: l'historique des départs, la dette technique, la dispersion d'Axel et Brice, la juniorité de l'équipe, et probablement une forme de lassitude. On ne la règle pas d'un coup. Mais on peut commencer à la reprendre progressivement, avec les personnes qu'on a.</p>
+  </section>
+
+  <!-- 14. 2.3 -->
+  <section class="slide" id="2-3">
+    <h2 class="h-title wide"><span class="num-inline">2.3</span> Le cadre ne sert pas à contrôler - il sert à autoriser.</h2>
+    <p class="lede-row">Si les collaborateurs ne savent pas ce qu'ils ont le droit de faire, ils n'osent pas. Quand Mickaël répond <em>« Non, je ne sais pas »</em> sur le planning de Font Helper, ce n'est peut-être pas de l'incompétence&nbsp;: c'est qu'on ne lui a jamais dit que c'était son rôle de savoir, ni qu'il avait le droit de se tromper dans l'estimation.</p>
     <div class="two-col">
+      <div class="callout">
+        <p class="strong">Le cadre précède la confiance, qui précède la responsabilité.</p>
+        <p>Un dev à qui on pose des critères d'acceptance clairs avant qu'il commence sait ce qu'on attend de lui. Il peut s'engager. Il peut signaler quand il dérive. Il peut progressivement prendre en charge des questions qu'il laissait remonter.</p>
+      </div>
       <div>
-        <div class="kicker">2.3 - Le cadre comme autorisation</div>
-        <p>Si les collaborateurs ne savent pas ce qu'ils ont le droit de faire, ils n'osent pas. Quand Mickaël répond <em>« Non, je ne sais pas »</em> sur le planning de Font Helper, ce n'est peut-être pas de l'incompétence&nbsp;: c'est qu'on ne lui a jamais dit que c'était son rôle de savoir, ni qu'il avait le droit de se tromper dans l'estimation.</p>
-        <div class="callout">
-          <p class="strong">Le cadre précède la confiance, qui précède la responsabilité.</p>
-          <p>Un dev à qui on pose des critères d'acceptance clairs avant qu'il commence sait ce qu'on attend de lui. Il peut s'engager. Il peut signaler quand il dérive. Il peut progressivement prendre en charge des questions qu'il laissait remonter.</p>
-        </div>
         <p class="muted">La juniorité de l'équipe aggrave le manque de cadre - elle ne le cause pas. Des devs plus seniors dans le même cadre produiraient probablement les mêmes symptômes. Des devs juniors dans un cadre adapté peuvent progresser vite.</p>
-      </div>
-      <div>
-        <div class="kicker">2.4 - Standards qui n'appartiennent qu'à Axel</div>
-        <p>Axel a des standards élevés - il les applique à lui-même avec rigueur. Mais ces standards lui appartiennent. Ils ne sont jamais devenus collectifs, parce qu'aucun mécanisme ne les rend visibles, partagés et exigibles avant que le dev commence.</p>
-        <div class="callout dark">
-          <p class="strong">Axel et Brice compensent structurellement ce que l'organisation ne produit pas.</p>
-          <p>Ils sont dans la boucle de QA, de monitoring, d'arbitrage d'archi, de support CSM. Leur bande passante est le facteur limitant réel - pas la capacité des devs.</p>
-          <p>Et cette compensation empêche les autres de monter en responsabilité&nbsp;: tant qu'Axel et Brice reprennent tout, personne d'autre n'apprend à porter.</p>
-        </div>
+        <p class="muted">Quelques ajustements ciblés du cadre - pas une refonte - peuvent changer significativement la capacité à délivrer, tout en créant les conditions pour que l'équipe monte en responsabilité progressivement.</p>
       </div>
     </div>
   </section>
 
-  <!-- 15. 2.5 -->
-  <section class="slide center" id="s15">
-        <h2 class="h-title"><span class="num-inline">2.5</span> Le risque à moyen terme est plus grave que le retard à court terme.</h2>
+  <!-- 14b. 2.4 -->
+  <section class="slide" id="2-4">
+    <h2 class="h-title wide"><span class="num-inline">2.4</span> Les standards d'Axel ne sont jamais devenus collectifs.</h2>
+    <p class="lede-row">Axel a des standards élevés - il les applique à lui-même avec rigueur. Mais ces standards lui appartiennent. Ils ne sont jamais devenus collectifs, parce qu'aucun mécanisme ne les rend visibles, partagés et exigibles avant que le dev commence.</p>
+    <div class="callout dark">
+      <p class="strong">Axel et Brice compensent structurellement ce que l'organisation ne produit pas.</p>
+      <p>Ils sont dans la boucle de QA, de monitoring, d'arbitrage d'archi, de support CSM. Leur bande passante est le facteur limitant réel - pas la capacité des devs.</p>
+      <p>Et cette compensation empêche les autres de monter en responsabilité&nbsp;: tant qu'Axel et Brice reprennent tout, personne d'autre n'apprend à porter.</p>
+    </div>
+    <p class="muted">Ce n'est pas la faute de l'équipe. L'envie de bien faire est réelle - Bastien, Wala, Tony en témoignent chacun à leur façon. Ce qui manque&nbsp;: que l'exigence d'Axel soit inscrite dans les specs avant que le dev commence, pas révélée en live quand il voit le résultat.</p>
+  </section>
+
+  <!-- 2.5 NEW: Le cadre protège mais empêche de grandir -->
+  <section class="slide" id="2-5">
+    <h2 class="h-title wide"><span class="num-inline">2.5</span> Le cadre actuel protège l'équipe - mais l'empêche de grandir.</h2>
+    <p class="lede-row">Le symétrique de 2.4 est tout aussi réel. Non seulement l'exigence ne descend pas vers l'équipe, mais ce que l'équipe fait - même si cela est imparfait ou souligne des dysfonctionnements - ne remonte pas non plus. Le circuit est coupé dans les deux sens.</p>
+    <div class="two-col">
+      <div>
+        <p class="strong">Ce qui bloque n'est pas l'indifférence. C'est une forme de protection active.</p>
+        <ul class="bullets">
+          <li>Pas de remise en cause (des choix, des méthodes) pour ne pas traumatiser</li>
+          <li>Communication rassurante pour ne pas brusquer les collaborateurs</li>
+          <li>Lucidité sur l'avancement gardée en partie pour soi pour ne pas décourager</li>
+          <li>Monthly présenté à la place de l'équipe plutôt que par elle</li>
+        </ul>
+      </div>
+      <div class="callout dark">
+        <p>Chaque choix est compréhensible pris isolément. Ensemble, ils produisent un cadre où l'équipe ne ressent ni l'urgence, ni la responsabilité, ni le droit d'échouer et d'en tirer quelque chose.</p>
+        <p class="strong">Le cadre actuel protège les gens. Mais il les empêche aussi de trouver leur juste place dans l'organisation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.6 (ex-2.5) Risque moyen terme -->
+  <section class="slide center" id="2-6">
+    <h2 class="h-title"><span class="num-inline">2.6</span> Le risque à moyen terme est plus grave que le retard à court terme.</h2>
     <p class="big-lede">Vous êtes en train de reproduire sur FontsNinja les mêmes patterns qui ont conduit au legacy FontRadar. La connaissance se perd, la dette se reconstruit, des décisions structurantes se prennent dans des discussions informelles sans être documentées.</p>
     <blockquote class="hero">« Le pire qui puisse vous arriver aujourd'hui, c'est de réussir. Dans l'état dans lequel vous êtes, si vous mettez cette marketplace dans les pattes des clients, la vie d'Axel serait 100 fois pire&nbsp;: beaucoup plus de clients mécontents, une équipe qui n'a pas eu le temps de cranter sur la responsabilité et l'ownership. »<cite>- Manu, en restitution</cite></blockquote>
     <p class="arrow">→ Sans changement structurel, dans deux ans&nbsp;: une marketplace qu'on ne peut pas opérer, maintenir, ni faire évoluer sereinement.</p>
   </section>
 
   <!-- 16. Section 3 intro -->
-  <section class="slide section-intro split" id="s16">
-    <div class="intro-left">
-      <div class="big-num">3</div>
-      <h2 class="h-display">Ce qu'on recommande</h2>
-      <p class="lede-row">Ces recommandations visent toutes un même objectif&nbsp;: <strong>faire évoluer le cadre</strong>. Pas le changer radicalement - l'ajuster aux endroits où il ne suffit plus. Parce que le cadre précède la confiance, qui précède la responsabilité. Sans cadre adapté, les standards d'Axel restent dans sa tête et l'organisation continue de compenser plutôt que de monter en puissance.</p>
-      <ol class="toc">
-        <li><span>3.1</span> Immédiatement - sans décision lourde</li>
-        <li><span>3.2</span> Des pistes à réfléchir dans un second temps</li>
-        <li><span>3.3</span> D'autres axes sur lesquels il serait utile d'agir</li>
-        <li><span>✕</span> Ce qu'on ne recommande pas - et pourquoi</li>
-      </ol>
-    </div>
-    <aside class="intro-right">
-      <div class="card">
-        <div class="card-num">3.1</div>
-        <h4>Immédiatement - sans décision lourde</h4>
-        <p>Des actions à mettre en place dans les meilleurs délais, sans effort particulier, avec un impact visible rapidement. Seul message à faire passer&nbsp;: <em>« ce qu'on fait ne fonctionne pas, on tente autre chose. Ça commence maintenant ».</em></p>
-      </div>
-      <div class="card">
-        <div class="card-num">3.2</div>
-        <h4>Des pistes à réfléchir dans un second temps</h4>
-        <p>Des pistes que nous jugeons pertinentes mais qui nécessitent d'être confrontées au réel - acceptation de l'équipe, capacité de pilotage, modalités concrètes - avant d'être engagées. Certaines demandent un vrai temps de réflexion.</p>
-      </div>
-      <div class="card">
-        <div class="card-num">3.3</div>
-        <h4>D'autres axes sur lesquels il serait utile d'agir</h4>
-        <p>Ce sur quoi nous interviendrions de manière opérationnelle si nous devions continuer ensemble. Des éléments à garder en tête, pas tous opérables dans l'état actuel de l'organisation.</p>
-      </div>
-    </aside>
+  <section class="slide section-intro" id="recommande">
+    <div class="big-num">3</div>
+    <h2 class="h-display two-thirds">Ce qu'on recommande</h2>
+    <p class="lede-row two-thirds">Ces recommandations visent toutes un même objectif&nbsp;: <strong>faire évoluer le cadre</strong>. Pas le changer radicalement - l'ajuster aux endroits où il ne suffit plus. Parce que le cadre précède la confiance, qui précède la responsabilité. Sans cadre adapté, les standards d'Axel restent dans sa tête et l'organisation continue de compenser plutôt que de monter en puissance.</p>
+    <ol class="toc">
+      <li><a href="#3-1" data-target="3-1"><span>3.1</span> Immédiatement - sans décision lourde</a></li>
+      <li><a href="#3-2a" data-target="3-2a"><span>3.2</span> Des pistes à réfléchir dans un second temps</a></li>
+      <li><a href="#3-3" data-target="3-3"><span>3.3</span> D'autres axes sur lesquels il serait utile d'agir</a></li>
+      <li><a href="#garde-fous" data-target="garde-fous"><span>✕</span> Ce qu'on ne recommande pas - et pourquoi</a></li>
+    </ol>
   </section>
 
   <!-- 17. Niveau 1 -->
-  <section class="slide" id="s17">
+  <section class="slide" id="3-1">
         <div class="kicker">Immédiatement · sans décision lourde</div>
     <h2 class="h-title wide"><span class="num-inline">3.1</span> Montrer qu'on fait différemment et commencer à faire bouger le cadre.</h2>
     <p class="lede-row">Les points ci-dessous peuvent être mis en place immédiatement, sans effort particulier. Seul message à faire passer&nbsp;: <em>« ce qu'on fait ne fonctionne pas, on tente autre chose. Ça commence maintenant ».</em></p>
-    <div class="grid-4">
+    <div class="grid-3">
       <div class="card">
         <div class="card-num">1</div>
         <h4>Séparer le daily plateforme du daily run</h4>
         <p>Ce ne sont pas les mêmes équipes, même si certaines personnes sont sur les deux. Aujourd'hui, les bugs FontRadar et la marketplace se disputent le même espace mental. Un daily dédié à la plateforme - court, focalisé.</p>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-2" data-target="1-2">1.2</a>
+          <a class="tag constat" href="#1-3" data-target="1-3">1.3</a>
+        </div>
       </div>
       <div class="card">
         <div class="card-num">2</div>
         <h4>Sprint goal obligatoire</h4>
         <p>Une phrase. Un résultat. Un engagement. Pas une liste de tickets. Crée le moment de review en fin de sprint&nbsp;: <em>« on s'était engagé à ça, voilà ce qu'on a tenu ».</em></p>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-3" data-target="1-3">1.3</a>
+        </div>
       </div>
       <div class="card">
         <div class="card-num">3</div>
         <h4>Critères d'acceptance sur chaque US</h4>
         <p>Deux ou trois lignes&nbsp;: <em>« c'est réussi si… »</em>. L'endroit où le « pourquoi métier » s'inscrit dans le travail concret - pas révélé après coup. Sur le Catalogue&nbsp;: un critère <em>« upload &lt; 30 s avec feedback clair »</em> aurait évité la livraison.</p>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-6" data-target="1-6">1.6</a>
+          <a class="tag constat" href="#1-8" data-target="1-8">1.8</a>
+          <a class="tag diagnostic" href="#2-4" data-target="2-4">2.4</a>
+        </div>
       </div>
       <div class="card">
         <div class="card-num">4</div>
         <h4>Démos comme rituel central</h4>
-        <p>Une fois par semaine ou a minima une fois par sprint, démo portée par les devs eux-mêmes. Permettre à chacun de porter la responsabilité de ce qu'il fait, d'être fier de ce qu'il présente, et de partager les avancées avec toute l'équipe - en particulier les CSM.</p>
+        <p>Une fois par semaine dans l'idéal, ou a minima une fois par sprint&nbsp;: une démo portée par ceux qui ont fait le travail - les devs, pas Axel ou Brice à leur place. L'enjeu n'est pas de faire une vitrine&nbsp;: c'est de créer un espace où le travail réel devient visible, où chacun porte ce qu'il a construit devant ses pairs, et où ce qui a été découvert en faisant - problèmes, ajustements, questions - remonte naturellement.</p>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-7" data-target="1-7">1.7</a>
+          <a class="tag constat" href="#1-8" data-target="1-8">1.8</a>
+          <a class="tag diagnostic" href="#2-5" data-target="2-5">2.5</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-num">5</div>
+        <h4>Reformater le monthly</h4>
+        <p>Le monthly existe. Il réunit toute l'équipe. C'est le bon rituel au bon moment - il manque juste le bon format. Que les devs présentent leurs avancées eux-mêmes, que les CSM rendent compte du terrain, qu'Axel et Brice ne soient pas les seuls à parler. Et surtout&nbsp;: qu'il présente au moins une décision - pas seulement des constats.</p>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-7" data-target="1-7">1.7</a>
+          <a class="tag constat" href="#1-8" data-target="1-8">1.8</a>
+          <a class="tag diagnostic" href="#2-5" data-target="2-5">2.5</a>
+        </div>
       </div>
     </div>
     <div class="optional-row">
@@ -428,99 +501,139 @@
         <div class="card opt">
           <h4>Monitoring de base sur FontRadar</h4>
           <p>3-4 métriques clés surveillées automatiquement - disputes entrantes, taux de traitement, temps de réponse API. Ne plus dépendre de la lecture manuelle de Brice ou Axel.</p>
+          <div class="refs">
+            <span class="label">Répond à</span>
+            <a class="tag constat" href="#1-5" data-target="1-5">1.5</a>
+          </div>
         </div>
         <div class="card opt">
           <h4>Triage des remontées CSM</h4>
           <p>Doter Edouard d'une grille simple pour qualifier avant de faire remonter à Brice&nbsp;: bloquant pour les revenus&nbsp;? bug ou question de process&nbsp;? Une heure de travail, libère immédiatement de la bande passante.</p>
+          <div class="refs">
+            <span class="label">Répond à</span>
+            <a class="tag constat" href="#1-3" data-target="1-3">1.3</a>
+            <a class="tag constat" href="#1-5" data-target="1-5">1.5</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 18. Niveau 2 - rôles -->
-  <section class="slide" id="s18">
+  <section class="slide" id="3-2a">
         <div class="kicker">Pistes à réfléchir · redonner une dynamique collective</div>
     <h2 class="h-title wide"><span class="num-inline">3.2 · A</span> Clarifier qui est garant de quoi.</h2>
     <p class="lede-row">C'est la décision la plus structurante. Même équipe, même budget - mais des rôles mieux définis. Aujourd'hui, Axel et Brice compensent tout. Ce n'est pas tenable pour eux, et ça ne laisse pas de place pour que les autres montent.</p>
-    <table class="t roles">
-      <thead><tr><th>Rôle</th><th>Garant de</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Axel</strong></td><td>Le produit et son ambition - la vision, le positionnement, la promesse faite aux fonderies</td></tr>
-        <tr><td><strong>Brice</strong></td><td>Le fonctionnel - que ce qui est spécifié corresponde au besoin, que ce qui sort fonctionne</td></tr>
-        <tr><td><strong>Tony</strong></td><td>La qualité technique - pas CTO, pas manager&nbsp;: garant de la reprise progressive de la maîtrise technique</td></tr>
-        <tr><td><strong>Le cadre</strong></td><td>La capacité à délivrer - planning, estimation, suivi des engagements</td></tr>
-      </tbody>
-    </table>
+    <div class="refs" style="margin-top:0;padding-top:0;border-top:none;margin-bottom:18px">
+      <span class="label">Répond à</span>
+      <a class="tag diagnostic" href="#2-2" data-target="2-2">2.2</a>
+      <a class="tag diagnostic" href="#2-4" data-target="2-4">2.4</a>
+      <a class="tag diagnostic" href="#2-5" data-target="2-5">2.5</a>
+    </div>
     <div class="two-col">
       <div>
-        <blockquote>« J'ai l'impression qu'il n'y a que Tony qui arrive à tenir sur ses engagements. »<cite>- Axel, sur Tony</cite></blockquote>
-        <div class="callout small">
-          <p>Sur le garant du cadre&nbsp;: Axel reconnaît ne pas pouvoir l'être lui-même. Brice non plus - ce rôle entrerait en concurrence avec ses autres responsabilités. <em>« On a probablement un trou de compétences là-dedans. Je m'inclue dedans »</em> (Axel). C'est la question ouverte - et peut-être l'argument pour un accompagnement externe.</p>
+        <div class="kicker">Qui devrait être garant de quoi&nbsp;?</div>
+        <table class="t roles">
+          <thead><tr><th>Rôle</th><th>Garant de</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Axel</strong></td><td>Le produit et son ambition - la vision, le positionnement, la promesse faite aux fonderies</td></tr>
+            <tr><td><strong>Brice</strong></td><td>Le fonctionnel - que ce qui est spécifié corresponde au besoin, que ce qui sort fonctionne</td></tr>
+            <tr><td><strong>Tony</strong></td><td>La qualité technique - pas CTO, pas manager&nbsp;: garant de la reprise progressive de la maîtrise technique</td></tr>
+            <tr><td><strong>Le cadre</strong></td><td>La capacité à délivrer - planning, estimation, suivi des engagements</td></tr>
+          </tbody>
+        </table>
+        <div class="frein mt">
+          <div class="frein-label">⚠ Frein possible</div>
+          <p>Brice peut vivre cette clarification comme une remise en cause de son périmètre. Et Axel, même avec les meilleures intentions, risque de continuer à intervenir sur tous les fils - rendant la clarification théorique.</p>
         </div>
       </div>
-      <div class="frein">
-        <div class="frein-label">⚠ Frein possible</div>
-        <p>Brice peut vivre cette clarification comme une remise en cause de son périmètre. Et Axel, même avec les meilleures intentions, risque de continuer à intervenir sur tous les fils - rendant la clarification théorique.</p>
+      <div>
+        <div class="callout small white">
+          <h4>Sur Tony</h4>
+          <p>Il a les compétences, il est reconnu par l'équipe, il tient ses engagements. Axel lui-même&nbsp;: <em>« J'ai l'impression qu'il n'y a que Tony qui arrive à tenir sur ses engagements. »</em> Ce qui manque&nbsp;: qu'on lui dise explicitement que c'est son rôle, et ce que ça veut dire concrètement. Cette conversation n'a pas eu lieu formellement. Elle devrait, avec Brice dans la pièce.</p>
+        </div>
+        <div class="callout small mt">
+          <h4>Sur le garant du cadre</h4>
+          <p>Axel reconnaît ne pas pouvoir l'être lui-même. Brice non plus - ce rôle entrerait en concurrence avec ses autres responsabilités. <em>« On a probablement un trou de compétences là-dedans. Je m'inclue dedans »</em> (Axel). C'est la question ouverte - et peut-être l'argument pour un accompagnement externe.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 19. Niveau 2 - actions (1/2) -->
-  <section class="slide" id="s19">
+  <!-- 19. Niveau 2 - actions -->
+  <section class="slide" id="3-2b">
         <div class="kicker">Pistes à réfléchir · redonner une dynamique collective</div>
-    <h2 class="h-title wide"><span class="num-inline">3.2 · B</span> Six chantiers à confronter au réel. <span class="part">1/2</span></h2>
+    <h2 class="h-title wide"><span class="num-inline">3.2 · B</span> Six chantiers à confronter au réel.</h2>
     <p class="lede-row">Les points déployés ici sont des pistes qui nécessitent d'être confrontées au réel&nbsp;: acceptation des équipes, capacité de pilotage, modalités de mise en œuvre concrète, etc. Certaines nécessitent un vrai temps de réflexion et d'analyse avant d'être mises en place.</p>
     <div class="grid-3">
       <div class="card with-frein">
         <div class="card-num">1</div>
         <h4>Test des estimations en heures - 2 mois</h4>
         <p>Acté en restitution. Axel&nbsp;: <em>« On teste pendant deux mois et si c'est nul, on revient en arrière. »</em> L'objectif n'est pas la précision - c'est l'engagement quotidien. Un ticket = maximum une journée. Si ça prend plus, c'est mal découpé. Ça crée le moment de check&nbsp;: <em>« tu m'avais dit ce soir, on est jeudi ».</em></p>
-        <div class="frein-inline">⚠ Résistance culturelle de l'équipe déjà identifiée - Brice a bloqué ce sujet une première fois. L'adhésion dépendra beaucoup de la manière dont c'est introduit et de qui le porte.</div>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-2" data-target="1-2">1.2</a>
+          <a class="tag constat" href="#1-3" data-target="1-3">1.3</a>
+        </div>
+        <div class="frein-inline">Résistance culturelle de l'équipe déjà identifiée - Brice a bloqué ce sujet une première fois. L'adhésion dépendra beaucoup de la manière dont c'est introduit et de qui le porte.</div>
       </div>
       <div class="card with-frein">
         <div class="card-num">2</div>
         <h4>Estimation de charge sur le MVP</h4>
         <p>C'est le prérequis absolu à tout planning crédible - et un chantier en soi qui mérite d'être organisé, pas bâclé en une session. Une approche possible&nbsp;: commencer par un découpage en grandes fonctionnalités, puis estimer chacune en mode macro pour avoir une première vue d'ensemble réaliste. Ensuite, descendre dans le détail fonctionnalité par fonctionnalité - découper finement la prochaine à engager, estimer précisément, avancer, puis faire de même pour la suivante. C'est un temps probablement conséquent qu'il faut anticiper, cadrer et tenir - pas improviser.</p>
-        <div class="frein-inline">⚠ L'exercice peut révéler des délais bien au-delà des attentes actuelles. Il faut être prêt à accepter ce que les estimations disent - pas à les ajuster pour qu'elles rassurent.</div>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-2" data-target="1-2">1.2</a>
+        </div>
+        <div class="frein-inline">L'exercice peut révéler des délais bien au-delà des attentes actuelles. Il faut être prêt à accepter ce que les estimations disent - pas à les ajuster pour qu'elles rassurent.</div>
       </div>
       <div class="card with-frein">
         <div class="card-num">3</div>
         <h4>Mettre en place une vraie solution de documentation</h4>
         <p>La connaissance de la marketplace vit actuellement dans Linear - un outil de production, pas de documentation. Les tickets se ferment, se réouvrent, et la connaissance qu'ils contiennent devient introuvable. Il faut un outil dédié, une convention simple, et une discipline de saisie - au minimum pour les règles métier, les décisions d'architecture, et les règles de facturation.</p>
-        <div class="frein-inline">⚠ La documentation est perçue comme une charge supplémentaire - d'autant plus que la documentation actuelle est éparpillée entre plusieurs outils - dans un contexte déjà sous pression. Sans rituel qui l'intègre au flux de travail existant, elle sera systématiquement déprioritisée au profit de l'urgence.</div>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-4" data-target="1-4">1.4</a>
+        </div>
+        <div class="frein-inline">La documentation est perçue comme une charge supplémentaire - d'autant plus que la documentation actuelle est éparpillée entre plusieurs outils - dans un contexte déjà sous pression. Sans rituel qui l'intègre au flux de travail existant, elle sera systématiquement déprioritisée au profit de l'urgence.</div>
       </div>
-    </div>
-  </section>
-
-  <!-- 19bis. Niveau 2 - actions (2/2) -->
-  <section class="slide" id="s19b">
-        <div class="kicker">Pistes à réfléchir · redonner une dynamique collective</div>
-    <h2 class="h-title wide"><span class="num-inline">3.2 · B</span> Six chantiers à confronter au réel. <span class="part">2/2</span></h2>
-    <p class="lede-row">Les points déployés ici sont des pistes qui nécessitent d'être confrontées au réel&nbsp;: acceptation des équipes, capacité de pilotage, modalités de mise en œuvre concrète, etc. Certaines nécessitent un vrai temps de réflexion et d'analyse avant d'être mises en place.</p>
-    <div class="grid-3">
       <div class="card with-frein">
         <div class="card-num">4</div>
         <h4>Suivi simplifié du temps run / legacy</h4>
         <p>Pas de timetracking fin. Sur chaque ticket de run, le dev indique une estimation simple du temps passé - 0,5 jour / 1 jour / 2 jours. L'objectif&nbsp;: objectiver en combien de temps réel le run et le legacy mobilisent l'équipe. C'est la donnée qui manque pour toute décision d'investissement future. Et pour connaître le coût réel d'une fonctionnalité comme le tunnel de commande.</p>
-        <div class="frein-inline">⚠ Même formulé légèrement, le suivi du temps peut être perçu comme du flicage. La discipline de saisie est difficile à tenir dans la durée sans un rituel qui l'ancre.</div>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-1" data-target="1-1">1.1</a>
+          <a class="tag constat" href="#1-2" data-target="1-2">1.2</a>
+        </div>
+        <div class="frein-inline">Même formulé légèrement, le suivi du temps peut être perçu comme du flicage. La discipline de saisie est difficile à tenir dans la durée sans un rituel qui l'ancre.</div>
       </div>
       <div class="card with-frein">
         <div class="card-num">5</div>
         <h4>Décision legacy - architecture (dispute engine)</h4>
         <p>Refactoring progressif ou repartir à zéro&nbsp;? Quels moyens est-on prêt à y mettre&nbsp;? Cette décision est stratégique et nécessite peut-être un avis technique externe pour être tranchée avec confiance. Tant qu'elle ne l'est pas, le planning de la plateforme restera impacté sans aucune maîtrise possible.</p>
-        <div class="frein-inline">⚠ Sans expertise technique externe, la décision risque d'être reportée indéfiniment. Les deux options ont des implications financières et humaines lourdes qu'il faut être prêt à assumer.</div>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-1" data-target="1-1">1.1</a>
+        </div>
+        <div class="frein-inline">Sans expertise technique externe, la décision risque d'être reportée indéfiniment. Les deux options ont des implications financières et humaines lourdes qu'il faut être prêt à assumer.</div>
       </div>
       <div class="card with-frein">
         <div class="card-num">6</div>
         <h4>Décision legacy - observabilité</h4>
         <p>C'est un problème distinct et plus rapidement traitable&nbsp;: 3 à 4 métriques surveillées automatiquement, alertes sur les seuils critiques. Ça ne résout pas le dispute engine - mais ça sort l'équipe du mode <em>« on découvre quand les dommages sont faits ».</em></p>
-        <div class="frein-inline">⚠ La compétence infra est concentrée sur Mickaël, déjà sollicité sur Font Helper. Ce chantier risque de se retrouver sans porteur disponible à court terme.</div>
+        <div class="refs">
+          <span class="label">Répond à</span>
+          <a class="tag constat" href="#1-1" data-target="1-1">1.1</a>
+          <a class="tag constat" href="#1-5" data-target="1-5">1.5</a>
+        </div>
+        <div class="frein-inline">La compétence infra est concentrée sur Mickaël, déjà sollicité sur Font Helper. Ce chantier risque de se retrouver sans porteur disponible à court terme.</div>
       </div>
     </div>
   </section>
 
   <!-- 20. Niveau 3 -->
-  <section class="slide" id="s20">
+  <section class="slide" id="3-3">
         <div class="kicker">D'autres axes utiles · long cours</div>
     <h2 class="h-title wide"><span class="num-inline">3.3</span> Piloter le cadre et reprendre la maîtrise progressivement.</h2>
     <p class="lede-row">Des actions et axes qu'il serait utile de travailler. À garder en tête, mais probablement pas tous opérables dans l'état actuel de l'organisation.</p>
@@ -550,7 +663,7 @@
   </section>
 
   <!-- 21. Garde-fous (sous-page de section 3) -->
-  <section class="slide" id="s21">
+  <section class="slide" id="garde-fous">
         <div class="kicker">Garde-fous</div>
     <h2 class="h-title wide"><span class="num-inline">✕</span> Ce qu'on ne recommande pas - et pourquoi.</h2>
     <div class="grid-4">
@@ -576,25 +689,26 @@
       </div>
       <div class="card no span-2">
         <div class="x">✕</div>
-        <h4>Changer les personnes</h4>
-        <p>Ce n'est pas notre compétence - et ce n'est donc pas ce que nous proposons. Cela dit, la question de la posture du dirigeant mériterait d'être posée à un moment. C'est un angle que nous pouvons questionner si le besoin s'en fait sentir, et pour lequel nous saurions mobiliser des ressources compétentes.</p>
+        <h4>Changer le fonctionnement des personnes</h4>
+        <p>Cette semaine a mis en lumière une question que nous ne pouvons pas ignorer&nbsp;: <strong>le leadership tel qu'il s'exerce aujourd'hui ne crée pas les conditions pour que l'équipe avance.</strong> Ce n'est pas une question de volonté ni de compétence technique - c'est une question de posture.</p>
+        <p>Faire évoluer cette dimension sort de nos compétences. Mais nous pouvons la questionner si le besoin s'en fait sentir, et mobiliser des ressources compétentes pour l'accompagner.</p>
       </div>
     </div>
   </section>
 
   <!-- 22. Section 4 intro -->
-  <section class="slide section-intro" id="s22">
+  <section class="slide section-intro" id="suite">
     <div class="big-num">4</div>
     <h2 class="h-display">Proposition de suite</h2>
     <ol class="toc">
-      <li><span>4.1</span> Ce que la semaine confirme</li>
-      <li><span>4.2</span> Ce qui reste ouvert</li>
-      <li><span>4.3</span> Ce que Lucius peut faire en phase 2</li>
+      <li><a href="#4-1" data-target="4-1"><span>4.1</span> Ce que la semaine confirme</a></li>
+      <li><a href="#4-2" data-target="4-2"><span>4.2</span> Ce qui reste ouvert</a></li>
+      <li><a href="#4-3" data-target="4-3"><span>4.3</span> Ce que Lucius peut faire en phase 2</a></li>
     </ol>
   </section>
 
   <!-- 23. Section 4 - acté -->
-  <section class="slide center" id="s23">
+  <section class="slide center" id="4-1">
         <div class="kicker">Proposition de suite</div>
     <h2 class="h-title wide"><span class="num-inline">4.1</span> Ce que la semaine confirme.</h2>
     <p class="big-lede">Le problème est organisationnel autant que technique. Les deux se nourrissent. Traiter l'un sans l'autre ne suffira pas.</p>
@@ -610,7 +724,7 @@
   </section>
 
   <!-- 23bis. Section 4 - reste ouvert -->
-  <section class="slide center" id="s23b">
+  <section class="slide center" id="4-2">
         <div class="kicker">Proposition de suite</div>
     <h2 class="h-title"><span class="num-inline">4.2</span> Ce qui reste ouvert.</h2>
     <p class="big-lede"><strong>Qui est garant de la capacité à délivrer&nbsp;?</strong></p>
@@ -618,7 +732,7 @@
   </section>
 
   <!-- 24. Section 4 - phase 2 -->
-  <section class="slide center" id="s24">
+  <section class="slide center" id="4-3">
         <div class="kicker">Ce que Lucius peut faire en phase 2</div>
     <h2 class="h-title"><span class="num-inline">4.3</span> Être ce garant externe - pour une période délimitée.</h2>
     <div class="two-col">
@@ -644,7 +758,7 @@
   </section>
 
   <!-- 26. Closing -->
-  <section class="slide closing" id="s26">
+  <section class="slide closing" id="conclusion">
     <div class="kicker">En conclusion</div>
     <h2 class="display closing-line">Ton équipe est bonne - pas parfaite certes, mais aucune équipe ne le sera jamais.<br><br>Elle mérite un cadre à la hauteur de ce qu'elle peut donner.</h2>
     <div class="signature">

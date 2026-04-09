@@ -68,30 +68,38 @@
   });
 
   const pad = n => String(n).padStart(2, '0');
-  const indexFromScroll = () => Math.round(deck.scrollLeft / window.innerWidth);
+  const HEADER_OFFSET = 64;
 
-  // Menu links: each entry maps to a slide id (sN), we resolve to a slide index
+  // Current index — tracked by IntersectionObserver, not recomputed on scroll
+  let currentIndex = 0;
+
+  // Menu links: each entry maps to a slide id, we resolve to a slide index
   const navLinks = [...document.querySelectorAll('.mainnav a[data-target]')];
   const navTargets = navLinks.map(a => slides.findIndex(s => s.id === a.dataset.target));
 
-  // Hash sync — hash format is #N (1-based slide number)
-  let suppressHashUpdate = false;
+  // Hash sync — hash format is #<slide-id> (semantic slug, stable across reorders)
+  // Also accept legacy numeric hash #N (1-based) for backward compat with older links.
   const indexFromHash = () => {
-    const m = (location.hash || '').match(/^#(\d+)$/);
-    if (!m) return null;
-    const n = parseInt(m[1], 10) - 1;
-    return (n >= 0 && n < slides.length) ? n : null;
+    const raw = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+    if (!raw) return null;
+    const numMatch = raw.match(/^(\d+)$/);
+    if (numMatch) {
+      const n = parseInt(numMatch[1], 10) - 1;
+      return (n >= 0 && n < slides.length) ? n : null;
+    }
+    const idx = slides.findIndex(s => s.id === raw);
+    return idx >= 0 ? idx : null;
   };
   const writeHash = i => {
-    const target = '#' + (i + 1);
+    const id = slides[i] && slides[i].id;
+    if (!id) return;
+    const target = '#' + id;
     if (location.hash === target) return;
-    suppressHashUpdate = true;
     history.replaceState(null, '', target);
-    setTimeout(() => { suppressHashUpdate = false; }, 0);
   };
 
-  const update = () => {
-    const i = Math.min(slides.length - 1, Math.max(0, indexFromScroll()));
+  const applyIndex = i => {
+    currentIndex = i;
     cur.textContent = pad(i + 1);
     let activeIdx = -1;
     navTargets.forEach((t, k) => { if (t >= 0 && t <= i) activeIdx = k; });
@@ -101,33 +109,41 @@
 
   const goTo = (i, smooth = true) => {
     const idx = Math.min(slides.length - 1, Math.max(0, i));
-    deck.scrollTo({ left: idx * window.innerWidth, behavior: smooth ? 'smooth' : 'auto' });
+    const top = slides[idx].offsetTop - HEADER_OFFSET;
+    window.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
+    applyIndex(idx);
   };
 
-  // Translate vertical wheel into horizontal scroll
-  let wheelLock = false;
-  deck.addEventListener('wheel', e => {
-    const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-    if (Math.abs(delta) < 4) return;
-    e.preventDefault();
-    if (wheelLock) return;
-    wheelLock = true;
-    const dir = delta > 0 ? 1 : -1;
-    goTo(indexFromScroll() + dir);
-    setTimeout(() => { wheelLock = false; }, 420);
-  }, { passive: false });
+  // IntersectionObserver: section is "active" when its top edge crosses the header line
+  const visible = new Set();
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      const idx = slides.indexOf(e.target);
+      if (e.isIntersecting) visible.add(idx);
+      else visible.delete(idx);
+    }
+    if (visible.size === 0) return;
+    // Lowest index wins (topmost currently visible)
+    const active = Math.min(...visible);
+    if (active !== currentIndex) applyIndex(active);
+  }, {
+    rootMargin: `-${HEADER_OFFSET + 1}px 0px -60% 0px`,
+    threshold: 0,
+  });
+  slides.forEach(s => io.observe(s));
 
-  // Keyboard
+  // Keyboard — arrows and pagedown navigate to previous/next section
   window.addEventListener('keydown', e => {
-    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); goTo(indexFromScroll() + 1); }
-    else if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); goTo(indexFromScroll() - 1); }
+    if (e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
+    if (['ArrowDown', 'ArrowRight', 'PageDown'].includes(e.key)) { e.preventDefault(); goTo(currentIndex + 1); }
+    else if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); goTo(currentIndex - 1); }
     else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
     else if (e.key === 'End') { e.preventDefault(); goTo(slides.length - 1); }
   });
 
   // Buttons
-  prev.addEventListener('click', () => goTo(indexFromScroll() - 1));
-  next.addEventListener('click', () => goTo(indexFromScroll() + 1));
+  prev.addEventListener('click', () => goTo(currentIndex - 1));
+  next.addEventListener('click', () => goTo(currentIndex + 1));
 
   // Menu links + brand — convert sN data-target to numeric hash navigation
   document.querySelectorAll('a[data-target]').forEach(a => {
@@ -140,17 +156,16 @@
 
   // React to manual hash changes (back/forward, paste a URL)
   window.addEventListener('hashchange', () => {
-    if (suppressHashUpdate) return;
     const idx = indexFromHash();
-    if (idx !== null) goTo(idx);
+    if (idx !== null && idx !== currentIndex) goTo(idx);
   });
-
-  // Scroll listener — keep counter, menu and hash in sync
-  deck.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
 
   // Initial position from hash, fall back to slide 1
   const initial = indexFromHash();
-  goTo(initial !== null ? initial : 0, false);
-  update();
+  if (initial !== null && initial > 0) {
+    // wait next frame so layout is settled before scrolling
+    requestAnimationFrame(() => goTo(initial, false));
+  } else {
+    applyIndex(0);
+  }
 })();

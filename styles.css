@@ -110,7 +110,8 @@
   color:#6B7280;font-weight:500;
 }
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv11"}
-body{overflow:hidden;height:100vh}
+html{overflow-x:clip;scroll-padding-top:64px}
+body{min-height:100vh}
 em{font-style:italic}
 strong{font-weight:700}
 
@@ -152,25 +153,21 @@ strong{font-weight:700}
 .footbar .meta{font-size:12px;letter-spacing:.04em;text-transform:uppercase;font-weight:500;display:flex;gap:10px;align-items:center;color:var(--text)}
 .footbar .meta .dot{opacity:.4}
 
-/* Deck — horizontal scroll snap */
+/* Deck — vertical one-pager (free scroll + snap proximity) */
 .deck{
-  position:fixed;top:64px;left:0;right:0;bottom:48px;
-  display:flex;flex-direction:row;
-  overflow-x:auto;overflow-y:hidden;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  scrollbar-width:none;
+  display:block;
+  padding:64px 0 48px;
 }
-.deck::-webkit-scrollbar{display:none}
 
 .slide{
-  flex:0 0 100vw;
-  height:calc(100vh - 112px);
-  scroll-snap-align:start;scroll-snap-stop:always;
-  padding:64px 96px 80px;
+  width:100%;
+  min-height:calc(100vh - 112px);
+  scroll-snap-align:start;
+  scroll-margin-top:64px;
+  padding:72px max(96px, calc((100vw - 1400px) / 2)) 88px;
   display:flex;flex-direction:column;justify-content:flex-start;
   position:relative;
-  border-right:2px solid var(--border);
+  border-bottom:2px solid var(--border);
 }
 .slide.center{justify-content:center;align-items:flex-start}
 
@@ -204,9 +201,11 @@ strong{font-weight:700}
 .h-title{
   font-family:var(--font-serif);font-weight:700;
   font-size:clamp(30px,2.8vw,46px);line-height:1.1;letter-spacing:-.015em;
-  margin:0 0 24px;max-width:24ch;
+  margin:0 0 24px;max-width:66.666%;
 }
-.h-title.wide{max-width:none}
+.h-title.wide{max-width:66.666%}
+.h-display.wide,.display.wide{max-width:none}
+.two-thirds{max-width:66.666%!important}
 .h-title .part{
   display:inline-block;margin-left:10px;
   font-family:var(--font-sans);font-weight:600;
@@ -253,11 +252,32 @@ p{font-size:16px;line-height:1.55;margin:0 0 14px;max-width:62ch;color:var(--dar
 .card.opt{background:var(--light-bg);box-shadow:5px 5px 0 0 rgba(0,0,0,1)}
 .card.opt:hover{box-shadow:8px 8px 0 0 var(--accent)}
 
+/* Refs tags inside cards */
+.refs{
+  display:flex;flex-wrap:wrap;gap:6px;align-items:center;
+  margin-top:14px;padding-top:12px;
+  border-top:1px dashed var(--darker-bg);
+}
+.refs .label{
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600;color:var(--muted);margin-right:2px;
+}
+.tag{
+  display:inline-block;padding:3px 9px;
+  font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:.02em;
+  text-decoration:none;border:1.5px solid var(--border);
+  transition:transform .15s var(--ease),box-shadow .15s var(--ease);
+}
+.tag.constat{background:var(--accent-light);color:var(--text)}
+.tag.diagnostic{background:#FFF7E6;color:var(--text)}
+.tag:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 0 var(--text)}
+
 /* Frein blocks */
 .frein{
   border:2px solid var(--border);background:#FFF7E6;
   padding:18px 20px;box-shadow:var(--shadow-card);
 }
+.frein.mt{margin-top:24px}
 .frein-label{
   font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
   color:#a85a00;margin-bottom:8px;
@@ -267,11 +287,17 @@ p{font-size:16px;line-height:1.55;margin:0 0 14px;max-width:62ch;color:var(--dar
 .card.with-frein{display:flex;flex-direction:column}
 .card.with-frein p{flex:1}
 .frein-inline{
-  margin-top:14px;padding:10px 12px;
+  margin-top:14px;
   border-top:2px solid var(--border);
   background:#FFF7E6;margin-left:-24px;margin-right:-24px;margin-bottom:-24px;
-  padding:12px 24px;
+  padding:12px 24px 14px;
   font-size:12px;line-height:1.45;color:#000;font-weight:500;
+}
+.frein-inline:before{
+  content:"⚠ Frein possible";
+  display:block;
+  font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+  color:#a85a00;margin-bottom:6px;
 }
 .split{display:grid;grid-template-rows:1fr 1fr;gap:22px}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:14px}
@@ -279,10 +305,9 @@ p{font-size:16px;line-height:1.55;margin:0 0 14px;max-width:62ch;color:var(--dar
 .span-2{grid-column:span 2}
 
 /* Cover */
-.cover{padding:64px 96px}
-.cover-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;height:100%;align-items:center}
+.cover-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center;min-height:calc(100vh - 300px)}
 .cover-meta{margin-top:36px;display:grid;gap:10px}
-.cover-meta>div{display:grid;grid-template-columns:120px 1fr;gap:18px;font-size:14px;border-bottom:1px solid var(--darker-bg);padding-bottom:8px}
+.cover-meta>div{display:grid;grid-template-columns:190px 1fr;gap:18px;font-size:14px;border-bottom:1px solid var(--darker-bg);padding-bottom:8px}
 .cover-meta .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .cover-meta .v{color:var(--text)}
 .cover .hint{
@@ -336,6 +361,8 @@ p{font-size:16px;line-height:1.55;margin:0 0 14px;max-width:62ch;color:var(--dar
 .callout.dark{background:var(--text);color:#fff;border-color:var(--text)}
 .callout.dark p,.callout.dark h4{color:#fff}
 .callout.small{padding:18px;margin-top:18px}
+.callout.small.mt{margin-top:18px}
+.callout.white{background:#FFFFFF}
 .callout p{margin:0;color:inherit}
 .callout p+p{margin-top:10px}
 
@@ -404,8 +431,15 @@ blockquote.hero{max-width:70ch;font-size:22px;border-left-width:6px;padding-left
   color:var(--accent);letter-spacing:-.04em;margin-bottom:8px;
 }
 .toc{list-style:none;padding:0;margin:24px 0 0;max-width:680px}
-.toc li{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--darker-bg);font-size:17px;color:var(--text)}
-.toc li span{font-family:var(--font-serif);font-weight:700;color:var(--accent-dark);min-width:38px}
+.toc li{border-bottom:1px solid var(--darker-bg)}
+.toc li a,.toc li{display:flex;gap:18px;align-items:baseline;font-size:17px;color:var(--text)}
+.toc li a{
+  padding:14px 4px;text-decoration:none;width:100%;
+  transition:color .15s var(--ease),padding .15s var(--ease),background .15s var(--ease);
+}
+.toc li a:hover{color:var(--accent-dark);padding-left:12px;background:var(--accent-light)}
+.toc li a:hover span{color:var(--accent-dark)}
+.toc li span{font-family:var(--font-serif);font-weight:700;color:var(--accent-dark);min-width:38px;flex-shrink:0}
 
 /* Levels */
 .levels{display:flex;gap:22px;margin-top:32px}
